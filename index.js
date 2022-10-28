@@ -30,7 +30,9 @@ app.use("/api/carts", cartRoute)
 app.use("/api/orders", orderRoute)
 app.use("/api/checkout", stripeRoute)
 
-app.listen(process.env.PORT || 5000, ()=>{
+const host = process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 5000
+app.listen(port,host, ()=>{
     console.log("Backend server is running")
 })
   
